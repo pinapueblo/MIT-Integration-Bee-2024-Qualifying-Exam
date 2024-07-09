@@ -1,0 +1,653 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+
+\title{MIT Integration BEE 2024 Qualifying Exam Solutions}
+\author{Pablo Pena}
+\date{July 2024}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This is a brief guide to the problems I've solved on the 2024 MIT Integration Bee Qualifying Exam. These solutions are by no means the \textit{only} way of solving the listed problems or the \textit{optimal} solutions. These are my attempts at creating a comprehensive guide for my intuition and how I approached these problems. These answers have been verified with the 2024 MIT Integration Bee Qualifying Exam released answers. For certain questions involving the use of logarithms, I had to substitute the use of log (which implies the use of base 10) with the natural log (ln) to match the released answer key mathematically. These questions will be marked so that you know which questions have been altered. The rest of the questions remain unchanged with their appearance on the released 2024 MIT Integration Bee Qualifying Exam. I apologize in advance for any grammatical errors or formatting inconsistencies in this solution guide.
+\vspace{1em}
+
+\noindent Best, \\
+Pablo Pena
+
+\section{Problems}
+
+%Question 1
+1)
+\[ \int_{2023}^{2025} 2024 \,dx \]
+
+\noindent This is a straightforward power rule question. We can take the anti-derivative of 2024 to yield:
+
+\[2024x \Big|_{2023}^{2025}\]
+
+\noindent Now, we evaluate this at the bounds 2025 and 2023:
+
+\[2024 \cdot 2025 - 2024 \cdot 2023\]
+
+\noindent Simplifying this gives us:
+
+\[2024 \cdot (2025 - 2023) = 2024 \cdot 2 = 4048\]
+\[ \boxed{4048} \]
+
+%Question 2
+\noindent 2)
+\[\int\frac{(x-1)^{\log(x+1)}}{(x+1)^{\log(x-1)}}\,dx\]
+
+\noindent In this problem, we can arbitrarily define some function that represents \[\frac{(x-1)^{ \log(x+1)}}{(x+1)^{ \log(x-1)}}\]
+
+
+\noindent Let:
+
+\[f(x) = \frac{(x-1)^{\log(x+1)}}{(x+1)^{ \log(x-1)}}\]
+
+\noindent Now we can perform some algebraic operations to make our function easier to integrate:
+
+\[ \log(f(x))= \log(\frac{(x-1)^{\log(x+1)}}{(x+1)^{\log(x-1)}})\]
+= 
+\[ \log(f(x))= \log((x-1)^{\log(x+1)} - \log({(x+1)^{\log(x-1)}})\]
+=\[ \log(f(x))= \log(x+1) \log((x-1) - \log(x-1) \log((x+1))\]
+=\[ \log(f(x))=0\]
+=\[10^{\log(f(x))}=10^0\]
+=\[f(x)=1\]
+Now we can substitute our function back into the integral:
+
+\[\int 1\,dx\]
+
+\[
+\boxed{x + C}
+\]
+
+%Question 3 THIS QUESTION WAS ALTERED
+\noindent 3)
+
+\noindent *This question substitutes the use of log(x) for ln(x)
+\[\int\ x\log(x)+2x \,dx\]
+This question involves using integration by parts (IBP). This is the basic form that IBP takes:
+
+\[\int\ udv = uv-\int\ vdu \]
+
+\noindent We can first factor out an x:
+\begin{flushleft}
+\[\int\ x(\ln(x)+2)\,dx\]
+
+\[u = \ln(x)+2\]
+\[du = \frac{1}{\ln(e)x}\]
+\[dv = x\]
+\[v = \frac{x^2}{2}\]
+
+
+= \[(\ln(x)+2)\frac{x^2}{2} - \int\ \frac{x^2}{2} \cdot \frac{1}{\ln(e)x}\,dx \]
+= \[\frac{\ln(x)x^2}{2} +x^2 - \int\ \frac{x}{2}\,dx\]
+= \[\frac{\ln(x)x^2}{2} + x^2 - \frac{1}{2}\int\ x \, dx\]
+= \[\frac{\ln(x)x^2}{2} +x^2 - \frac{1}{2} \cdot \frac{x^2}{2} + C\]
+= \[\frac{\ln(x)x^2}{2} +x^2 - \frac{x^2}{4} + C\]
+=\[\boxed{\frac{\ln(x)x^2}{2}+\frac{3x^2}{4} + C}\]
+\end{flushleft}
+%Question 4 THIS QUESTION WAS ALTERED
+\noindent 4)
+
+\noindent *This question substitutes the use of log(x) for ln(x)
+\[\int\ \frac{dx}{x\log(x)+2x}\]
+
+\noindent We can solve this by employing u-substitution:
+\begin{flushleft}
+\[u = \ln(x)+2\]
+\[du = \frac{1}{x}dx\]
+\[dx = xdu\]
+
+=\[\int\ \frac{x}{xu}du\]
+=\[\int\ \frac{1}{u}du\]
+=\[\ln(u) + C\]
+
+\noindent Substitute u back into our result:
+
+=\[\boxed{\ln(\ln(x)+2) + C}\]
+\end{flushleft}
+
+%Question 5
+\noindent 5)
+\[\int\ \arccos(\sin(x))\,dx\]
+Recognize that sin(x) can be rewritten:
+\[
+\sin(x) = \cos\left(x - \frac{\pi}{2}\right)
+\]
+We can substitute this back into the integral:
+\begin{flushleft}
+\[\int\ \arccos(\cos\left(x - \frac{\pi}{2}\right))\,dx\]
+= \[\int x - \frac{\pi}{2} \, dx\]
+=\[
+\frac{x^2}{2} - \frac{\pi}{2}x \ \Bigg|_{0}^{2\pi}
+\]
+
+= \[\frac{(2\pi)^2}{2}-\frac{2\pi^2}{2} - 0\]
+
+= \[2\pi^2 - \pi^2\]
+= \[\boxed{\pi^2}\]
+\end{flushleft}
+%Question 6
+\noindent 6) 
+\[\int\ \frac{\cos(x)+\cot(x)+\csc(x)+1}{\sin(x)+\tan(x)+\sec(x)+1}\,dx\]
+This problem requires some simplification to make the function we are integrating more obvious. First, let's start with making some common fractions in both the numerator and denominator of our function:
+
+\noindent Numerator:
+\[\cos(x)+\cot(x)+\csc(x)+1\]
+= \[\cos(x) + \frac{\cos(x)}{\sin(x)} + \frac{1}{\sin(x)} + 1\]
+= \[\frac{\sin(x)\cos(x)}{\sin(x)} + \frac{\cos(x)}{\sin(x)} +  \frac{1}{\sin(x)} + \frac{\sin(x)}{\sin(x)}\]
+= \[\frac{\sin(x)\cos(x)+\cos(x)+1+\sin(x)}{\sin(x)}\]
+\noindent Denominator:
+\[\sin(x)+\tan(x)+\sec(x)+1\]
+=\[\sin(x) + \frac{\sin(x)}{\cos(x)}+\frac{1}{\cos(x)}+1\]
+=\[\sin(x)\cos(x) + \frac{\sin(x)}{\cos(x)}+\frac{1}{\cos(x)}+\frac{\cos(x)}{\cos(x)}\]
+=\[\frac{\sin(x)\cos(x)+\sin(x)+1+\cos(x)}{\cos(x)}\]
+
+\noindent Now substitute the numerator and denominator back into the integral:
+\begin{flushleft}
+=\[\int\ {(\frac{\sin(x)\cos(x)+\cos(x)+1+\sin(x)}{\sin(x)})}{(\frac{\cos(x)}{\sin(x)\cos(x)+\sin(x)+1+\cos(x)})}\,dx\]
+
+= \[\int \frac{\cos(x)}{\sin(x)} \cdot 1 \, dx\]
+=\[\int\ \cot(x)\,dx\]
+\noindent We can now perform u-substitution to solve this integral:
+\[u =  \sin(x)\]
+\[du = \cos(x)dx\]
+\[dx = \frac{du}{cos(x)}\]
+= \[\int\ \frac{\cos(x)}{u} \cdot \frac{du}{\cos(x)}\]
+= \[\int\ \frac{1}{u}\,du\]
+= \[\ln(u) + C\]
+
+\noindent Now substitute u back in:
+
+=\[\boxed{\ln(\sin(x)) + C}\]
+\end{flushleft}
+%Question 7
+\noindent 7) 
+\[\int\ \frac{x^{2024}-1}{x^{506}-1}\, dx\]
+
+\noindent We can recognize that 506 is a factor of 2024 and 1012:
+
+= \[\int\ \frac{x^{2(1012)}-1}{x^{506}-1}\, dx\]
+= \[\int\ \frac{(x^{1012}+1)(x^{1012}-1)}{(x^{506}-1}\,dx \]
+= \[\int\ \frac{(x^{1012}+1)(x^{506}-1)((x^{506}+1))}{(x^{506}-1)}\,dx \]
+= \[\int\ (x^{1012}+1)(x^{506}+1) \,dx \]
+= \[\int\ x^{1518}+x^{1012}+x^{506}+1\,dx\]
+= \[\boxed{\frac{x^{1519}}{1519} + \frac{x^{1013}}{1013} + \frac{x^{507}}{507}+x + C}\]
+
+%Question 8
+\noindent 8)
+\[\int_{-1}^{1} (5x^3-3x)^2 \,dx \]
+
+\noindent We can approach this through a brute-force polynomial expansion. 
+
+\noindent Recognizing the form of a fully expanded quadratic is helpful:
+\begin{flushleft}
+\[\int_{-1}^{1} (25x^6-30x^4+9x^2) \,dx \]
+= \[\frac{25x^7}{7} - \frac{30x^5}{5} + \frac{9x^3}{3} \Big|_{-1}^{1}\]
+
+= \[\frac{25x^7}{7} - 6x^5 + {3x^3} \Big|_{-1}^{1}\]
+
+= \[ (\frac{25}{7}-6+3)-(-\frac{25}{7}+6-3)\]
+
+= \[\frac{50}{7}-12+6\]
+
+= \[\frac{50}{7} -6\]
+= \[\frac{50}{7} - \frac{42}{7}\]
+
+=\[\boxed{\frac{8}{7}}\]
+\end{flushleft}
+
+
+%Question 9)
+\noindent 9)
+\[\int_{0}^{2\pi} (\sin\left(x\right)+\cos\left(x\right))^{11} \,dx \]
+
+\noindent We can attempt to simplify the trigonometric expression. Suppose we can perfectly represent the sum of these two trigonometric functions in terms of one trigonometric function with variable transformations:
+\begin{flushleft}
+\[A\sin(x+\alpha)\]
+
+\noindent Recall that:
+\[\sin(\alpha+\beta) = \sin(\alpha)\cos(\beta) + \sin(\beta)\cos(\alpha)\]
+
+\[\sin(x) + \cos(x) = A\sin(x+\alpha)\]
+=\[\sin(x) + \cos(x) = A\sin(\alpha)\cos(x) + A\sin(x)\cos(\alpha) \]
+
+\noindent In order for the equality to be true:
+\[\sin(x) + \cos(x) = (A\sin(\alpha))\cos(x) + (A\cos(\alpha))\sin(x) \]
+
+\[A\sin(\alpha) = 1 \]
+\[A\cos(\alpha) = 1\]
+
+\[1^2 + 1^2 = 2\]
+\noindent Likewise:
+\[A^2\sin^2(\alpha) = A^2\cos^2(\alpha) = 2\]
+=\[A^2(\sin^2(\alpha) + \cos^2(\alpha)) = 2\]
+=\[A^2 = 2\]
+\[A = \sqrt{2}\]
+
+\noindent Recall that:
+\[\sqrt{2}\sin(\alpha) = 1 \]
+\[\sqrt{2}\cos(\alpha) = 1\]
+
+\[\alpha = \arcsin(\frac{1}{\sqrt{2}})\]
+\[\alpha = \arccos(\frac{1}{\sqrt{2}})\]
+
+\[\alpha = \frac{\pi}{4}\]
+Now we know that:
+\[\sin(x) + \cos(x) = \sqrt{2}\sin(x + \frac{\pi}{4})\]
+
+\noindent We can now substitute this function back into our original integral:
+
+\[\int_{0}^{2\pi} (\sqrt{2}\sin(x + \frac{\pi}{4}))^{11} \,dx \]
+=\[\int_{0}^{2\pi} 2^{5}\sqrt{2}\left(\sin\left(x+\frac{\pi}{4}\right)\right)^{11}\,dx\]
+=\[32\int_{0}^{2\pi} 2^{5}\sqrt{2}\left(\sin\left(x+\frac{\pi}{4}\right)\right)^{11}\,dx\]
+
+\noindent Recall that:
+\[A\sin(x+\alpha)^2 + A\cos(x+\alpha)^2 = A\]
+\[A\sin(x+\alpha)^2 = A - A\cos(x+\alpha)^2\]
+=\[32\int_{0}^{2\pi} \left(1-\left(\cos\left(x+\frac{\pi}{4}\right)\right)^{2}\right)^{5}\left(\sin\left(x+\frac{\pi}{4}\right)\right)\,dx\]
+We can perform u-substitution:
+
+\[u=\cos\left(x+\frac{\pi}{4}\right)\]
+\[du=-\sin\left(x +\frac{\pi}{4}\right)dx\]
+\[dx = -\frac{du}{\sin(x +\frac{\pi}{4})} \]
+= \[-32\int_{0}^{2\pi} \left(1-u^{2}\right)^{5}\left(\sin\left(x+\frac{\pi}{4}\right)\right) \frac{du}{\sin(x +\frac{\pi}{4})} \]
+
+= \[-32\int_{0}^{2\pi} (1-u^{2})^5\,du\]
+
+\noindent We can expand this polynomial quickly using binomial expansion:
+
+\[(x+y)^n = \sum_{k=0}^{n} \binom nk x^k y^{n-k}\]
+
+\begin{tabular}{>{n=}l<{\hspace{12pt}}*{13}{c}}
+0 &&&&&&&1&&&&&&\\
+1 &&&&&&1&&1&&&&&\\
+2 &&&&&1&&2&&1&&&&\\
+3 &&&&1&&3&&3&&1&&&\\
+4 &&&1&&4&&6&&4&&1&&\\
+5 &&1&&5&&10&&10&&5&&1&\\
+
+\end{tabular}
+\[\left(-u^{2}\right)^{5}\left(1^{0}\right)+5\left(-u^{2}\right)^{4}\left(1\right)^{1}+10\left(-u^{2}\right)^{3}\left(1\right)^{2}+10\left(-u^{2}\right)^{2}\left(1\right)^{3}+5\left(-u^{2}\right)^{1}\left(1\right)^{4}+\left(-u^{2}\right)^{0}\left(1\right)^{5}\]
+
+= \[-u^{10}+5u^{8}-10u^{6}+10u^{4}-5u^{2}+1\]
+
+\[\int_{\cos(\frac{\pi}{4})}^{\cos(\frac{9\pi}{4})} -u^{10}+5u^{8}-10u^{6}+10u^{4}-5u^{2}+1\,du\]
+=\[-\frac{u^{11}}{11}+\frac{5u^{9}}{9}-\frac{10u^{7}}{7}+2u^{5}-\frac{5u^{3}}{3}+u \Big|_{\cos(\frac{\pi}{4})}^{\cos(\frac{9\pi}{4})}\]
+
+
+\noindent We can recognize a property of integrals that exists in our bounds:
+\[\cos(2\pi + \alpha) = \cos(\alpha) \]
+\[\int_{a}^{a}f(x)\,dx = 0\]
+By virtue of evaluating this integral, the upper and lower bounds will cancel each other out:
+
+\[\boxed{0}\]
+\end{flushleft}
+
+
+%Question 10
+\noindent 10) 
+\begin{flushleft}
+\[\int_{0}^{2\pi} \left(\sinh\left(x\right)+\cosh\left(x\right)\right)^{11} \,dx\]
+\noindent We can rewrite these hyperbolic trigonometric functions:
+\[\int_{0}^{2\pi} \left(\frac{\left(e^{x}-e^{-x}\right)}{2}+\frac{\left(e^{x}+e^{-x}\right)}{2}\right)^{11}\,dx\]
+
+=\[\int_{0}^{2\pi} \left(\frac{\left(2e^{x}\right)}{2}\right)^{11}\,dx\]
+
+=\[\int_{0}^{2\pi} \left(e^{x}\right)^{11} \,dx\]
+
+=\[\frac{e^{11x}}{11} \Big|_{0}^{2\pi}\]
+=\[\frac{e^{22\pi}}{11} - \frac{e^0}{11}\]
+=\[\boxed{\frac{e^{22\pi}-1}{11}}\]
+\end{flushleft}
+%Question 11
+\noindent 11)
+\begin{flushleft}
+\[\int\ \csc^2(x)\tan^2024(x)\, dx \]
+Let's expand these trigonometric functions to further simplify them.
+
+\[\int\ \frac{1}{\sin^2(x)} \frac{\sin^{2024}(x)}{\cos^{2024}(x)}\,dx \]
+
+=\[\int\ \frac{\sin^{2022}(x)}{\cos^{2024}(x)}\,dx \]
+= \[\int\ \frac{1}{\cos^{2}(x)} \frac{\sin^{2022}(x)}{\cos^{2022}(x)}\,dx\]
+\noindent We know that:
+\[\frac{d}{dx}\sec(x) = \sec(x)\tan(x)\]
+\noindent We can now perform u-substitution:
+\[u = \tan(x)\]
+\[du = \sec^2(x)dx\]
+\[dx = \frac{du}{\sec^2(x)}\]
+=\[\int \sec^2(x)u^{2022} \frac{du}{\sec^2(x)}\,dx \]
+=\[\int\ u^{2022}\,du \]
+=\[\frac{u^{2023}}{2023} + C\]
+\noindent Now substitute u back into the anti-derivative:
+\[\boxed{\frac{\tan^{2023}(x)}{2023} + C}\]
+\end{flushleft}
+
+
+%Question 12
+\noindent 12)
+\begin{flushleft}
+\noindent*This question substitutes the use of log(x) for ln(x)
+\[\int\cos(x)^x(\log(\cos(x))-x\tan(x))\,dx\]
+At first glance, there's seemingly no apparent intuition for solving this question. Regardless, we can try to perform u-substitution:
+
+\[u = \cos(x)^x\]
+\[du = \frac{d}{dx}\cos(x)^x\]
+We can define cos(x) in terms of y so that it is easier to recognize the differentiation process:
+\[y = \cos(x)^x\]
+= \[\ln(y) = \ln(\cos(x)^x)\]
+=\[\ln(y) = x\ln(\cos(x))\]
+Employ implicit differentiation: 
+\[\frac{dy}{dx}\ln(y) = \frac{dy}{dx}x\ln(\cos(x))\]
+=\[\frac{y'}{y} = \ln(\cos(x)) - \frac{\sin(x)}{\cos(x)}x\]
+
+=\[du = y' = y( \ln(\cos(x)) - \tan(x)x)\]
+=\[du = \cos(x)^x( \ln(\cos(x)) - \tan(x)x)dx\]
+\[dx = \frac{du}{\cos(x)^x( \ln(\cos(x)) - \tan(x)x)}\]
+
+= \[\int\ \cos(x)^x(\log(\cos(x))-x\tan(x)) \frac{du}{(\cos(x)^x( \ln(\cos(x)) - \tan(x)x))}\]
+
+=\[\int\ du\]
+= \[u + C\]
+We can substitute u back into the anti-derivative:
+
+= \[\boxed{\cos(x)^x + C}\]
+\end{flushleft}
+
+
+%Question 13
+\noindent 13)
+\begin{flushleft}
+\[\int_{-\infty}^{\infty} e^{-\frac{(x-2024)^2}{4}}\, dx\]
+
+We can recognize that this integral takes the form of a Gaussian Integral:
+
+\[\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi} \]
+The exact reasoning for why this is true isn't necessarily essential to solving this problem. However, if you are curious about the derivation of this integral result, the work is listed below:
+
+\[(\int_{-\infty}^{\infty} e^{-x^2}\,dx)^2 = \]
+\[(\int_{-\infty}^{\infty} e^{-x^2}\,dx)(\int_{-\infty}^{\infty} e^{-x^2}\,dx)\]
+
+\noindent We can rewrite this integral in terms of two one-dimensional Gaussian integrals:
+\[(\int_{-\infty}^{\infty} e^{-y^2}\,dy)(\int_{-\infty}^{\infty} e^{-x^2}\,dx)\]
+
+= \[ \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-(y^2+x^2)}\,dydx\]
+
+\noindent We can recognize that:
+
+\[r^2 = x^2+y^2\]
+%fix integral bounds. I think you have to use limit notation xD
+%COME BACK TO. I DON'T THINK I EXPLAINED THIS WELL.
+We can convert our integrals into Polar form. There are some notable changes we will have to make to our integral while converting between the Cartesian and Polar forms. Firstly, our integral will be with respect to two new variables: the radius and our angle theta. The bounds for our integral with respect to theta will change from zero to two pi since we are now integrating across the entire unique domain of a polar plane. Secondly, our bounds for the integral with respect to the radius will change from zero to infinity since we are integrating across the entire unique domain that a radius can have. Lastly, our variables dydx have been converted to r since this represents the radius that an infinitesimally small surface area that changes in the x and y direction would create:
+\[\iint_{\mathbb{R}^2} e^{-(y^2+x^2)}\,dydx = \] \[
+\int_{0}^{2\pi}\int_{0}^{\infty} e^{-r^2}rdrd \theta \]
+= \[\int_{0}^{\infty} e^{-r^2}rdr \theta \Big|_{0}^{2\pi}\]
+= \[2\pi \int_{0}^{\infty} e^{-r^2}rdr\]
+Now we can perform u-substitution to solve the integral with respect to the radius:
+\[u = -r^2\]
+\[du = -2rdr\]
+\[dr = - \frac{du}{2r}\]
+= \[-2\pi \int\ e^{u}r \frac{du}{2r}\]
+Substitute u back into the anti-derivative:
+=\[\lim_{b\to\infty}-2\pi \frac{1}{2} e^{-r^2} \Big|_{0}^{b} \]
+\[\lim_{b\to\infty}-\pi \frac{1}{e^{b^2}} - (-\pi)\]
+= \[\pi\]
+
+\noindent Now that we know:
+\[(\int_{-\infty}^{\infty} e^{-x^2}\,dx)^2 = \pi\]
+\[\sqrt{(\int_{-\infty}^{\infty} e^{-x^2}\,dx)^2} = \sqrt{\pi}\]
+= \[\int_{-\infty}^{\infty} e^{-x^2}\,dx = \sqrt{\pi}\]
+
+
+\noindent Now that we've established the intuition for the Gaussian Integral, we can generalize it to help solve the given problem:
+\[
+\int_{-\infty}^{\infty} e^{-\frac{(x-2024)^2}{4}} \, dx = \int_{-\infty}^{\infty} e^{-\frac{(x-2024)}{2} \cdot \frac{(x-2024)}{2}} \, dx
+\]
+
+\[u = \frac{e^{(x-2024)}}{2} \]
+\[du = \frac{1}{2}dx\]
+\[dx = 2du\]
+\[2 \int_{-\infty}^{\infty} e^{-u^2}\,du\]
+
+\noindent We know that:
+\[\int_{-\infty}^{\infty} e^{-u^2}\,du\ = \sqrt{\pi}\]
+Since our original integral has a coefficient of 2:
+\[\boxed{2\sqrt{\pi}}\]
+\end{flushleft}
+
+
+%Question 14
+\noindent 14)
+\begin{flushleft}
+\[\int_{\frac{1}{e}}^{e}\left(1-\frac{1}{x^{2}}\right)e^{e^{\left(x+\frac{1}{x}\right)}}dx\]
+
+\noindent We can perform u-substitution:
+\[u = x+\frac{1}{x}\]
+\[du = 1-\frac{1}{x^2}dx\]
+\[dx = \frac{du}{(1-\frac{1}{x^2})}\]
+=\[\int_{e+\frac{1}{e}}^{e+\frac{1}{e}}\left(1-\frac{1}{x^{2}}\right)e^{e^{u}} \frac{du}{(1-\frac{1}{x^2})}\]
+
+=\[\int_{e+\frac{1}{e}}^{e+\frac{1}{e}} e^{e^u} \,du\]
+
+\noindent We must recognize a property of the fundamental theorem of calculus:
+\[\int_{a}^{a}f(x)\,dx = 0\]
+\noindent Therefore:
+\[\int_{\frac{1}{e}}^{e}\left(1-\frac{1}{x^{2}}\right)e^{e^{\left(x+\frac{1}{x}\right)}} \, dx = 0\]
+
+\[\boxed{0}\]
+\end{flushleft}
+
+
+%Question 15
+\noindent 15)
+\begin{flushleft}
+\[\int\ \left(x+1-e^{-x}\right)e^{xe^{x}} \,dx\]
+
+\noindent We can attempt to rewrite this function:
+\[\int\ \left(xe^{x}+e^{x}-e^{-x}e^{x}\right)e^{x\left(e^{x}-1\right)} \,dx\]
+=\[\int\ \left(xe^{x}+e^{x}-1\right)e^{x\left(e^{x}-1\right)} \,dx\]
+We can perform u-substitution:
+\[u=x(e^{x}-1)\]
+\[du = (e^{x}+xe^{x}-1)dx\]
+\[dx = \frac{du}{e^{x}+xe^{x}-1}\]
+
+=\[\int\ \left(xe^{x}+e^{x}-1\right)e^{u} \frac{du}{xe^{x}+e^{x}-1}\]
+=\[\int\ e^u \,du = e^u+C\]
+We can now plug in our u back into the anti-derivative:
+\[\boxed{e^{(e^{x}-1)x} + C}\]
+\end{flushleft}
+
+
+%Question 16
+\noindent 16)
+\begin{flushleft}
+\[\int\ \frac{\arctan\left(x\right)}{1-x^{2}}+\frac{\operatorname{arctanh}\left(x\right)}{1+x^{2}}\,dx\]
+
+\noindent Firstly, we should recognize that the derivatives of arctan(x) and arctanh(x) appear in the function respectively. We can rewrite arctanh(x) to make this more apparent:
+
+\[
+\text{arctanh}(x) = \frac{1}{2}\ln\left(\frac{1+x}{1-x}\right)
+\]
+
+\[\frac{d}{dx} \frac{1}{2}\ln\left(\frac{\left(1+x\right)}{\left(1-x\right)}\right)\ = \frac{1}{2}\left(\frac{\left(1-x\right)}{\left(1+x\right)}\right)\cdot\frac{\left(\left(1-x\right)-\left(1+x\right)\left(-1\right)\right)}{\left(1-x\right)^{2}} \]
+
+=\[\frac{1}{2\left(1+x\right)}\left(\frac{\left(1-x\right)+\left(1+x\right)}{\left(1-x\right)}\right)\]
+=\[\frac{2}{2\left(1-x^{2}\right)}\]
+=\[\frac{1}{\left(1-x^{2}\right)}\]
+
+\noindent We can now perform IBP:
+\[\int\ udv = uv-\int\ vdu \]
+\[\int\ \frac{\arctan\left(x\right)}{1-x^{2}}\,dx + \int\ \frac{\operatorname{arctanh}\left(x\right)}{1+x^{2}}\,dx\]
+
+\noindent Let's start with the integral on the left-hand side first:
+\[u=\arctan\left(x\right)\]
+\[du=\frac{1}{1+x^{2}}\]
+\[dv=\frac{1}{1-x^{2}}\]
+\[v=\operatorname{arctanh}\left(x\right)\]
+=\[\arctan\left(x\right)\operatorname{arctanh}\left(x\right)-\int_{ }^{ }\frac{\operatorname{arctanh}\left(x\right)}{1+x^{2}}\,dx + \int\ \frac{\operatorname{arctanh}\left(x\right)}{1+x^{2}}\,dx + C\]
+The integrals cancel out and we are left with:
+
+\[\boxed{\arctan(x)\operatorname{arctanh(x)} + C}\]
+\end{flushleft}
+
+
+%Question 17
+\noindent 17) 
+\begin{flushleft}
+\noindent *This question substitutes the use of log(x) for ln(x)
+\[ \int\ (\sum_{k=0}^{\infty} \sin(\frac{\pi k}{2}) x^k) \,dx \]
+
+\noindent We can briefly expand this polynomial to try and find a recursive pattern that we can utilize. Here are the first 4 terms evaluated from k = 0 to k = 7:
+
+\[\sum_{k=0}^{\infty} \sin(\frac{\pi k}{2}) x^k = x - x^3 +x^5-x^7+...+x^k\]
+
+\noindent We can notice that this polynomial contains a common factor r:
+
+\[r = -x^2\]
+\[a_0 = x\]
+
+\noindent Evaluate an infinite geometric series:
+
+\[\frac{a_0}{1-r}\]
+
+= \[\frac{x}{1-(-x^2)}\]
+
+\noindent We can now substitute this function back into the integral:
+=\[\int\ \frac{x}{1+x^2}\,dx\]
+
+\noindent We can employ u-substitution:
+
+\[u = 1+x^2\]
+\[du = 2xdx\]
+\[dx = \frac{du}{2x}\]
+= \[\int\ \frac{x}{u2x}du\,dx\]
+= \[\int\ \frac{1}{2u}\,du\]
+= \[\frac{1}{2}\ln(u) + C\]
+
+Substitute u back into the anti-derivative:
+
+= \[\boxed{\frac{\ln(1+x^2)}{2} + C}\]
+\end{flushleft}
+
+
+%Question 18
+\noindent 18)
+\begin{flushleft}
+\[\int_{0}^{1} \sum_{n=0}^{2024} x^{2^{n-1012}}\,dx\]
+
+\noindent We can integrate this series using basic power rule techniques:
+\[\int_{0}^{1} \sum_{n=0}^{2024}x^{2^{n-1012}}\,dx = \sum_{n=0}^{2024}\frac{\left(x^{2^{n-1012}+1}\right)}{2^{n-1012}+1} \Big|_{0}^{1}\]
+\noindent Evaluate the bounds:
+\[\sum_{n=0}^{2024}\frac{\left(\left(1\right)^{2^{n-1012}+1}\right)}{2^{n-1012}+1}-\sum_{n=0}^{2024}\frac{\left(\left(0\right)^{2^{n-1012}+1}\right)}{2^{n-1012}+1}\]
+
+\noindent We can split this summation into simpler series (Specifically at the 1012th term since this allows us to create a simple fraction):
+=\[\sum_{n=0}^{2024}\frac{1}{2^{n-1012}+1}\]
+=\[\frac{1}{2^{1012-1012}+1}+\sum_{n=0}^{1011}\frac{1}{2^{n-1012}+1}+\sum_{n=1013}^{2024}\frac{1}{2^{n-1012}+1}\]
+
+=\[\frac{1}{2}+\sum_{n=0}^{1011}\frac{1}{2^{n-1012}+1}+\sum_{n=1013}^{2024}\frac{1}{2^{n-1012}+1}\]
+
+
+\noindent Let's try and recombine these summations. To do this, we need our summations to have the same starting and ending index. We can perform an index substitution to achieve this:
+
+\noindent Let: \[n = n_0 + 1013\]
+\[n_{0}=n-1013\]
+
+\noindent Now substitute this new index into our series:
+\[\frac{1}{2}+\sum_{n=0}^{1011}\frac{1}{2^{n-1012}+1}+\sum_{n_0=0}^{2024-1013}\frac{1}{2^{n_0-1012+1013}+1}\]
+
+\noindent At this point, we can treat the substituted index as a normal index since the entire series has undergone an index shift:
+
+=\[\frac{1}{2}+\sum_{n=0}^{1011}\frac{1}{2^{n-1012}\left(2^{\left(1012-n\right)}+1\right)}+\sum_{n=0}^{1011}\frac{1}{2^{n+1}+1}\]
+=\[\frac{1}{2}+\sum_{n=0}^{1011}\frac{2^{1012-n}}{2^{1012-n}+1}+\sum_{n=0}^{1011}\frac{1}{2^{n+1}+1}\]
+\noindent We can use a property of finite series:
+\[\sum_{n=a}{b}f(n)\]
+\noindent Consider some index:
+\[k = b+a-n\]
+\[\sum_{n=a}^{b}f(n) = \sum_{k=a}^{b}f(a+b-k)\]
+
+=\[\frac{1}{2}+\sum_{n=0}^{1011}\frac{2^{1012-n}}{2^{1012-n}+1}+\sum_{n=0}^{1011}\frac{1}{2^{1011-n+1}+1}\]
+=\[\frac{1}{2}+\sum_{n=0}^{1011}\frac{2^{1012-n}+1}{2^{1012-n}+1}\]
+=\[\frac{1}{2}+\sum_{n=0}^{1011}1\]
+=\[1\left(1012\right)+\frac{1}{2}\]
+=\[\boxed{\frac{2025}{2}}\]
+\end{flushleft}
+
+%Question 19
+\noindent 19)
+\begin{flushleft}
+
+\noindent *This question substitutes the use of log(x) for ln(x)
+\[\int\ \frac{x^{4}}{3-6x+6x^{2}-4x^{3}+2x^{4}} \,dx \]
+
+\noindent We can perform polynomial long division:
+
+\[ \frac{x^{4}}{3-6x+6x^{2}-4x^{3}+2x^{4}} = \frac{1}{2} + \frac{\left(2x^{3}-3x^{2}+3x-\frac{3}{2}\right)}{3-6x+6x^{2}-4x^{3}+2x^{4}}\]
+
+\noindent Simplify our fraction:
+
+\[\frac{1}{2}+\frac{\left(4x^{3}-6x^{2}+6x-3\right)}{2\left(3-6x+6x^{2}-4x^{3}+2x^{4}\right)}\]
+
+= \[\frac{1}{2}+\frac{1}{2} \cdot \frac{\left(4x^{3}-6x^{2}+6x-3\right)}{(3-6x+6x^{2}-4x^{3}+2x^{4})}\]
+
+\noindent We can now perform u-substitution:
+=\[u=3-6x+6x^{2}-4x^{3}+2x^{4}\]
+\[du=-6+12x-12x^{2}+8x^{3}\]
+\[du=4 (-6+12x-12x^{2}+8x^{3})dx\]
+\[dx = \frac{du}{2\left(-3+6x-6x^{2}+4x^{3}\right)}\]
+
+\[\int\ \frac{1}{2} \,dx + \int \frac{\left(4x^{3}-6x^{2}+6x-3\right)}{u}\ \cdot \frac{du} {2\cdot2\left(4x^{3}-6x^{2}+6x-3\right)}\]
+=\[\frac{1}{2}x + \frac{1}{4}\int\ \frac{du}{u}\]
+=\[\frac{1}{2}x + \frac{1}{4}\ln(u) + C\]
+Substitute u back into the anti-derivative:
+
+=\[\boxed{\frac{1}{2}x + \frac{1}{4}\ln(3-6x+6x^{2}-4x^{3}+2x^{4}) + C}\]
+\end{flushleft}
+
+
+%Question 20
+\noindent 20)
+\begin{flushleft}
+\[\int_{1}^{3} \frac{x+\frac{x+...}{1+...}}{1+\frac{x+...}{1+...}} \,dx \]
+
+\noindent We can approach this by defining a function that represents \[\frac{x+\frac{x+...}{1+...}}{1+\frac{x+...}{1+...}}\]
+
+\noindent Let:
+
+\[y = \frac{x+\frac{x+...}{1+...}}{1+\frac{x+...}{1+...}
+}\]
+
+\noindent We can recognize that this function contains itself since it is categorized by recursively nested divisions. This function can be rewritten such that:
+
+\[y = \frac{x+y}{1+y}\]
+
+\noindent Now we can rewrite this function in terms of x:
+
+= \[y(1+y) = x+y\]
+= \[y+y^2 = x+y\]
+= \[y^2 = x\]
+= \[y = \sqrt{x}\]
+
+\noindent Now we can substitute y back into our integral:
+\[\int_{1}^{3} \sqrt{x}\,dx \]
+=\[\int_{1}^{3} x^{\frac{1}{2}}\,dx \]
+
+=\[\frac{2}{3}x^{\frac{3}{2}}\ \Big |_{1}^{3}\]
+
+= \[\frac{2}{3} 3 \sqrt{3}\ - \frac{2}{3}\]
+=\[\boxed{2\sqrt{3}-\frac{2}{3}}\]
+
+\section{Reflection}
+After solving some of these problems, I've realized why MIT maintains prestige in its Integration Bee competitions. Finding out that this exam is required to be taken in 20 minutes was a very humbling experience to say the least. Though the actual process of integrating each problem was not as challenging as I initially anticipated, the setup required multiple questions to simplify functions to make them more digestible was certainly a challenge for me. I realized that almost every question on this qualifying exam had a unique process for solving it. Some questions required minimal calculus knowledge to solve while others required more advanced techniques (such as the Gaussian Integral question). I'm certainly not a math prodigy so I'm sure there are aspects to my work that I could've simplified better or used more efficient methods to get around solving an integral. Ultimately, I'm glad that I took on this challenge for myself and I believe that I've learned new ways to approach challenging integration questions and gained new mathematical intuition. I hope this guide can help others who use it for self-study or out of curiosity (or boredom). Thank you for reading through my work.
+
+\vspace{1em}
+
+\noindent Sincerely, \\
+Pablo Pena
+\end{flushleft}
+\end{document}
